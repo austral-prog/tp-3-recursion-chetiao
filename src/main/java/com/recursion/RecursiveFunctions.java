@@ -5,9 +5,18 @@ import java.util.List;
 public class RecursiveFunctions {
 
     public static int recursiveIndexOf(List<String> list, String target) {
-        return -1;
-    }
+        if (list.size() == 0) {return -1;}
 
+        if (target.equals(list.get(list.size() - 1)))  {     // caso base
+            return list.size()-1;                                              //recursiveIndexOf(List.of("a", "b", "c"), "c"))
+        }
+
+        else {
+            list.remove(list.size()-1);
+            return recursiveIndexOf(list, target);
+        }
+
+    }
     public static int recursiveIndexOfByIndex(List<String> list, String target, int index) {
         return -1;
     }
